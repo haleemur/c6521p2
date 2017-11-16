@@ -5,9 +5,9 @@
  * StackOverflow: https://stackoverflow.com/users/2570261/haleemur-ali
  *
  * This is a straight forward implementation of Frequent Pair Mining
- * Apriori Algorithm Map Reduce Variant.
+ * Apriori Algorithm MapFGPRecords Reduce Variant.
  *
- * The algorithm is implemented using Hadoop Map Reduce.
+ * The algorithm is implemented using Hadoop MapFGPRecords Reduce.
  *
  * In the map stage, for every pair of attributes from a transaction
  * record is mapped out with a count of 1.

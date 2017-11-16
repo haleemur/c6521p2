@@ -58,21 +58,4 @@ public class FPGHeader {
             mos.write(new Text(keySplit[1]), new IntWritable(sum), keySplit[0]);
         }
     }
-
-    public static void main(String[] args)
-            throws IOException, InterruptedException, ClassNotFoundException {
-        Job job = Job.getInstance();
-        job.setJobName("build-header");
-        job.setJarByClass(FPGHeader.class);
-        job.setMapperClass(Map.class);
-        job.setCombinerClass(Reduce.class);
-        job.setReducerClass(Reduce.class);
-        job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
-
-        FileInputFormat.addInputPath(job, new Path(args[0]));
-        FileOutputFormat.setOutputPath(job, new Path("temp"));
-
-        System.exit(job.waitForCompletion(true) ? 0 : 1);
-    }
 }
